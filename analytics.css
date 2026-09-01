@@ -1,0 +1,87 @@
+.uplift-screen { animation-duration: 20s; }
+.uplift-admin-screen { animation-delay: 0s; }
+.uplift-book-screen { animation-delay: 5s; }
+.uplift-calendar-screen { animation-delay: 10s; }
+.uplift-analytics-screen { animation-delay: 15s; }
+
+.uplift-analytics-screen {
+  padding: 23px;
+  color: #050505;
+  background: #fbf7fb;
+}
+.analytics-heading small,
+.analytics-charts small {
+  color: #f53b75;
+  font: 700 6px DM Mono;
+  letter-spacing: .12em;
+}
+.analytics-heading h3 {
+  max-width: 390px;
+  margin: 7px 0 14px;
+  font: 600 23px/1.05 Syne;
+  letter-spacing: -.04em;
+}
+.analytics-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-bottom: 9px;
+}
+.analytics-metrics > div {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid rgba(5,5,5,.12);
+  box-shadow: 0 8px 20px rgba(5,5,5,.05);
+}
+.analytics-metrics span { display: block; min-height: 18px; color: #9048b7; font: 700 5px DM Mono; }
+.analytics-metrics b { display: block; margin: 2px 0; font: 700 21px Syne; }
+.analytics-metrics small { color: #716973; font-size: 5px; }
+.analytics-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.analytics-charts > div { padding: 11px; background: #fff; border: 1px solid rgba(5,5,5,.12); }
+.analytics-charts > div > b { display: block; margin: 4px 0 10px; font-size: 9px; }
+.analytics-charts label { display: grid; grid-template-columns: 50px 1fr 22px; align-items: center; gap: 5px; margin: 8px 0; font: 600 5px DM Mono; text-transform: uppercase; }
+.analytics-charts label > span { height: 6px; overflow: hidden; background: #eee8ef; }
+.analytics-charts label i { display: block; height: 100%; background: linear-gradient(90deg,#9048b7,#f53b75); animation: chartGrow 1.2s ease both; }
+.analytics-charts label em { color: #9048b7; font-style: normal; text-align: right; }
+@keyframes chartGrow { from { transform: scaleX(0); transform-origin: left; } }
+
+@keyframes upliftCycle {
+  0%, 21% { opacity: 1; transform: translateX(0); }
+  25%, 96% { opacity: 0; transform: translateX(-12px); }
+  97% { opacity: 0; transform: translateX(12px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .analytics-charts label i { animation: none; }
+}
+@media (max-width: 480px) {
+  .uplift-analytics-screen { padding: 16px; }
+  .analytics-heading h3 { font-size: 18px; }
+  .analytics-metrics b { font-size: 17px; }
+  .analytics-charts > div { padding: 8px; }
+  .analytics-charts label { grid-template-columns: 38px 1fr 17px; }
+}
+
+/* Pull the analytics capabilities forward in both case studies. */
+.project .tags span:nth-child(4),
+.project .tags span:nth-child(5) {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--acid);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-weight: 500;
+  transform: translateY(-2px);
+}
+.project .tags span:nth-child(4)::before,
+.project .tags span:nth-child(5)::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--violet);
+  box-shadow: 0 0 0 3px rgba(124,98,255,.16);
+}

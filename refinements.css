@@ -1,0 +1,123 @@
+/* Stronger opening positioning */
+.availability {
+  width: fit-content;
+  padding: 11px 16px;
+  border: 1px solid var(--ink);
+  background: var(--acid);
+  box-shadow: 5px 5px 0 var(--ink);
+  font-weight: 500;
+}
+.hero h1 em { position: relative; }
+.hero h1 em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.05em;
+  height: .055em;
+  background: var(--acid);
+  transform: rotate(-.5deg);
+}
+.hero-bottom p strong { display: block; margin-top: 12px; max-width: 650px; color: var(--violet); font-size: .82em; line-height: 1.6; }
+
+/* Expanded supporting work */
+.more-grid { align-items: stretch; }
+.more-grid .more-card {
+  position: relative;
+  min-height: 255px;
+  overflow: hidden;
+  background: rgba(255,255,255,.28);
+}
+.more-grid .more-card::after {
+  content: "↗";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font: 14px DM Mono;
+  color: var(--violet);
+}
+.more-grid .more-card b,
+.more-grid .more-card p,
+.more-grid .more-card span { position: relative; z-index: 2; }
+.more-grid .more-card b { max-width: 85%; font-size: 20px; line-height: 1.15; }
+.more-grid .more-card p { margin: auto 0 22px; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.more-grid .more-card span { color: var(--ink); font-weight: 500; line-height: 1.5; }
+.more-grid .more-card:hover p,
+.more-grid .more-card:hover span { color: #c7c8c1; }
+.more-grid .analytics-card { border-top: 5px solid var(--violet); }
+.more-grid .database-card { border-top: 5px solid var(--acid); }
+.more-grid .bot-card { border-top: 5px solid var(--ink); }
+.bot-card::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 26px;
+  width: 68px;
+  height: 45px;
+  border-radius: 24px 24px 18px 18px;
+  background: var(--violet);
+  opacity: .14;
+  box-shadow: inset 0 -8px 0 rgba(23,25,20,.18);
+}
+.bot-card b::after { content: "••"; position: absolute; top: -17px; right: -21px; color: var(--ink); letter-spacing: 12px; opacity: .25; font: 700 20px Manrope; }
+.analytics-card::before {
+  content: ":)";
+  position: absolute;
+  top: 27px;
+  right: 24px;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 4px solid var(--violet);
+  border-radius: 50%;
+  color: var(--violet);
+  background: var(--acid);
+  opacity: .18;
+  font: 700 27px DM Mono;
+  transform: rotate(8deg);
+}
+.database-card::before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  bottom: 65px;
+  width: 84px;
+  height: 100px;
+  border: 4px solid var(--ink);
+  background: repeating-linear-gradient(90deg,transparent 0 13px,rgba(124,98,255,.22) 13px 19px),repeating-linear-gradient(0deg,transparent 0 15px,rgba(216,255,82,.5) 15px 22px);
+  opacity: .11;
+  box-shadow: -24px 22px 0 -4px var(--ink);
+}
+.game-server-card { color: white; border-color: #302644 !important; background: linear-gradient(#6f75ca 0 45%,#9bd8d2 45% 46%,#39674d 46% 53%,#392c27 53%) !important; }
+.game-server-card b { margin-top: 64px; text-shadow: 0 2px 0 rgba(0,0,0,.35); }
+.game-server-card p,.game-server-card span { color: rgba(255,255,255,.86) !important; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+.pixel-scene { position: absolute; inset: 0; z-index: 1; margin: 0; opacity: .85; image-rendering: pixelated; }
+.pixel-scene::before,.pixel-scene::after { content: ""; position: absolute; background: #eef4ee; box-shadow: 12px 0 #eef4ee,24px 0 #eef4ee,12px -8px #eef4ee; }
+.pixel-scene::before { width: 12px; height: 8px; top: 31px; left: 30px; }
+.pixel-scene::after { width: 12px; height: 8px; top: 48px; right: 43px; transform: scale(.7); }
+.pixel-scene i { position: absolute; bottom: 46%; width: 18px; height: 30px; background: #214b37; box-shadow: -12px 12px #2f6246,12px 12px #2f6246; }
+.pixel-scene i:nth-child(1){left:12%}.pixel-scene i:nth-child(2){left:48%;transform:scale(1.35);transform-origin:bottom}.pixel-scene i:nth-child(3){right:10%;transform:scale(.8);transform-origin:bottom}
+
+/* Make the skills inventory read as a capability dashboard. */
+.skill-columns { gap: 14px; }
+.skill-columns > div {
+  position: relative;
+  min-height: 220px;
+  padding: 24px 20px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.055);
+}
+.skill-columns > div::before { content: ""; position: absolute; top: 0; left: 0; width: 42px; height: 3px; background: var(--acid); }
+.skill-columns small { font-size: 10px; }
+.skill-columns span { padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.09); font-size: 13px; }
+
+@media(max-width:800px){
+  .availability{font-size:9px;line-height:1.5}
+  .more-grid .more-card{min-height:230px}
+  .skill-columns>div{min-height:200px}
+}
+@media(max-width:480px){
+  .more-grid .more-card{min-height:215px}
+  .skill-columns{grid-template-columns:1fr}
+}

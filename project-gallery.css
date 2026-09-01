@@ -1,0 +1,48 @@
+.quiz-showcase {
+  position: relative;
+  width: 82%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #f8f7f1;
+  box-shadow: 0 28px 70px rgba(26,18,74,.28);
+  transform: rotate(-1.5deg);
+}
+.quiz-chrome {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 43px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  background: rgba(245,245,241,.94);
+  border-bottom: 1px solid #e3e2dc;
+}
+.quiz-chrome span { width: 7px; height: 7px; border-radius: 50%; background: #cbc9c3; }
+.quiz-chrome b { margin-left: 12px; font: 8px DM Mono; color: #8b8983; }
+.quiz-chrome i { margin-left: auto; font: 7px DM Mono; color: #6249e6; font-style: normal; letter-spacing: .1em; }
+.quiz-moment { position: absolute; inset: 43px 0 9px; padding: 26px; opacity: 0; animation: momentCycle 12s infinite; }
+.quiz-moment-two { animation-delay: 4s; }
+.quiz-moment-three { animation-delay: 8s; }
+.quiz-scene { width: 100%; height: 53%; border-radius: 50%; background-repeat: no-repeat; box-shadow: 0 13px 35px rgba(31,27,25,.08); }
+.scene-cuddle { background: #fff url("assets/catbreed/question-cuddle.webp") center / cover; animation: sceneBreathe 3.2s ease-in-out infinite; }
+.scene-alone { background-image: url("assets/catbreed/question-alone-animation.webp"); background-size: 400% 100%; animation: spriteStory 4s steps(1,end) infinite; }
+.scene-zoomies { background-image: url("assets/catbreed/question-zoomies-animation.webp"); background-size: 400% 100%; animation: spriteStory 3.2s steps(1,end) infinite; }
+.moment-copy { padding: 18px 7px 0; }
+.moment-copy small { font: 8px DM Mono; color: #8b8983; letter-spacing: .11em; }
+.moment-copy h3 { margin: 9px 0 12px; font: 600 clamp(18px,1.8vw,25px)/1.06 Syne; letter-spacing: -.04em; }
+.moment-copy span { display: block; padding: 10px 12px; border: 1px solid #dad8d1; border-radius: 7px; font-size: 9px; color: #65635e; }
+.quiz-progress { position: absolute; z-index: 6; bottom: 0; left: 0; right: 0; height: 5px; background: rgba(124,98,255,.13); }
+.quiz-progress span { display: block; height: 100%; background: var(--violet); transform-origin: left; animation: galleryProgress 12s linear infinite; }
+@keyframes momentCycle { 0%,28%{opacity:1;transform:translateX(0)} 32%,96%{opacity:0;transform:translateX(-14px)} 97%{opacity:0;transform:translateX(14px)} 100%{opacity:1;transform:translateX(0)} }
+@keyframes spriteStory { 0%,22%{background-position:0 0} 25%,47%{background-position:33.333% 0} 50%,72%{background-position:66.666% 0} 75%,97%{background-position:100% 0} 100%{background-position:0 0} }
+@keyframes sceneBreathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.025) rotate(-.7deg)} }
+@keyframes galleryProgress { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+@media (prefers-reduced-motion: reduce) { .quiz-moment-one{opacity:1}.quiz-moment,.quiz-scene,.quiz-progress span{animation:none} }
+@media (max-width:800px) { .quiz-showcase{width:78%;max-width:430px}.quiz-moment{padding:21px}.moment-copy h3{font-size:23px} }
+@media (max-width:480px) { .quiz-showcase{width:82%}.quiz-chrome b{display:none}.quiz-moment{padding:17px}.moment-copy{padding-top:15px}.moment-copy h3{font-size:18px;margin:7px 0 10px} }
+
+/* Real Uplift Beauty interface moments, adapted from the project dashboard and booking page. */
+.uplift-showcase{position:relative;width:88%;aspect-ratio:4/5;overflow:hidden;border-radius:12px;background:#fbf7fb;box-shadow:0 28px 70px rgba(31,19,32,.24);transform:rotate(1.2deg);font-family:Manrope,sans-serif}.uplift-screen{position:absolute;inset:0 0 42px;opacity:0;animation:upliftCycle 15s infinite;background:#fbf7fb}.uplift-admin-screen{animation-delay:0s}.uplift-book-screen{animation-delay:5s}.uplift-calendar-screen{animation-delay:10s}.uplift-topbar{height:48px;padding:0 18px;background:#9048b7;color:#fff;display:flex;align-items:center;gap:17px;font-size:7px}.uplift-topbar b{font:700 17px Syne;margin-right:auto}.uplift-admin-body{padding:24px;color:#050505}.uplift-admin-body>small,.calendar-intro small,.book-overlay small{font:700 7px DM Mono;letter-spacing:.12em;color:#f53b75}.uplift-admin-body>h3{font:600 25px/1.05 Syne;letter-spacing:-.04em;margin:8px 0 20px;max-width:390px}.admin-panels{display:grid;grid-template-columns:1.08fr .92fr;gap:10px}.admin-panels>div{padding:15px;background:#fff;border:1px solid rgba(5,5,5,.12);box-shadow:0 9px 23px rgba(5,5,5,.06);display:flex;flex-direction:column;gap:8px}.admin-panels small{font:700 6px DM Mono;color:#f53b75}.admin-panels b{font-size:10px}.admin-panels label{font:700 6px DM Mono;text-transform:uppercase}.admin-panels label span{display:block;margin-top:4px;padding:7px;background:#fbf7fb;border:1px solid #e4dfe5;color:#555}.admin-panels button,.book-overlay button,.mini-calendar button{border:0;background:#f53b75;color:#fff;padding:8px;font:700 6px DM Mono;text-transform:uppercase}.admin-panels p{font-size:6px;padding:7px 0;margin:0;border-bottom:1px solid #eee}.admin-panels p strong{color:#9048b7;margin-right:4px}.book-photo{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.12)),linear-gradient(0deg,rgba(0,0,0,.8),transparent),url("assets/uplift/yemi-about.jpg") 54% 30%/cover}.book-overlay{position:absolute;left:29px;right:29px;bottom:36px;color:#fff}.book-overlay h3{font:600 31px/1 Syne;margin:8px 0 13px;max-width:320px;letter-spacing:-.05em}.book-overlay p{font-size:9px;line-height:1.55;max-width:290px;color:rgba(255,255,255,.82)}.book-overlay button{padding:10px 15px;margin-top:6px}.uplift-calendar-screen{padding:28px 25px;display:grid;grid-template-columns:.72fr 1.28fr;gap:16px;color:#050505;align-items:center}.calendar-intro h3{font:600 25px/1.05 Syne;margin:9px 0;letter-spacing:-.04em}.calendar-intro p{font-size:8px;line-height:1.55;color:#5b525d}.calendar-intro>span{display:block;margin-top:16px;padding:10px;background:#fff;border:1px solid #ddd;font:6px DM Mono;color:#f53b75;text-transform:uppercase}.calendar-intro span b{display:block;color:#050505;margin-top:5px;font-size:8px}.mini-calendar{padding:16px;background:#fff;border:1px solid #e1dce2}.mini-calendar>div{display:flex;justify-content:space-between;align-items:center;font-size:9px}.mini-calendar>small{display:block;margin:16px 0 10px;text-align:center;font:6px DM Mono;color:#777}.mini-calendar p{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.mini-calendar i{display:grid;place-items:center;height:21px;font:normal 6px DM Mono;border:1px solid #eee}.mini-calendar i.active{background:#9048b7;color:#fff}.mini-calendar button{width:48%;margin:4px 1%;font-size:5px}.uplift-gallery-label{position:absolute;z-index:6;left:0;right:0;bottom:0;height:42px;background:#171117;color:#fff;display:flex;align-items:center;padding:0 16px;gap:10px}.uplift-gallery-label span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#f53b75;font:7px DM Mono}.uplift-gallery-label b{font:600 9px Syne}.uplift-gallery-label i{margin-left:auto;font:normal 6px DM Mono;color:#d9b7eb}@keyframes upliftCycle{0%,29%{opacity:1;transform:translateX(0)}33%,96%{opacity:0;transform:translateX(-12px)}97%{opacity:0;transform:translateX(12px)}100%{opacity:1;transform:translateX(0)}}@media(prefers-reduced-motion:reduce){.uplift-admin-screen{opacity:1}.uplift-screen{animation:none}}@media(max-width:800px){.uplift-showcase{width:82%;max-width:460px}.uplift-admin-body>h3{font-size:22px}}@media(max-width:480px){.uplift-showcase{width:88%}.uplift-topbar span{display:none}.uplift-admin-body{padding:17px}.uplift-admin-body>h3{font-size:19px}.book-overlay h3{font-size:24px}.uplift-calendar-screen{padding:18px 14px;gap:9px}.calendar-intro h3{font-size:18px}.uplift-gallery-label i{display:none}}
