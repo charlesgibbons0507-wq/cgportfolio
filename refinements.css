@@ -20,6 +20,26 @@
 }
 .hero-bottom p strong { display: block; margin-top: 12px; max-width: 650px; color: var(--violet); font-size: .82em; line-height: 1.6; }
 
+/* Recruiter-friendly live product callout */
+.project-live-link {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin: 24px 0 10px;
+  padding: 15px 17px;
+  border: 1px solid var(--ink);
+  background: var(--acid);
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.project-live-link span { font: 500 9px DM Mono; letter-spacing: .1em; text-transform: uppercase; }
+.project-live-link strong { font: 600 17px Syne; }
+.project-live-link b { font-size: 20px; }
+.project-live-link:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--ink); }
+.project-live-link:focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
+
 /* Expanded supporting work */
 .more-grid { align-items: stretch; }
 .more-grid .more-card {
@@ -120,4 +140,6 @@
 @media(max-width:480px){
   .more-grid .more-card{min-height:215px}
   .skill-columns{grid-template-columns:1fr}
+  .project-live-link{grid-template-columns:1fr auto;gap:6px 12px}
+  .project-live-link span{grid-column:1 / -1}
 }
